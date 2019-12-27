@@ -20,17 +20,6 @@ echo "*********************"
 sudo touch .env
 
 echo "*********************"
-echo "Setting WordPress env variables"
-echo "*********************"
-
-WORDPRESS_DB_USER=WORDPRESS_DB_USER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 20 | head -n 1)
-WORDPRESS_DB_PASSWORD=WORDPRESS_DB_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 20 | head -n 1)
-WORDPRESS_DB_NAME=WORDPRESS_DB_NAME=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 20 | head -n 1)
-echo $WORDPRESS_DB_USER | sudo tee -a .env
-echo $WORDPRESS_DB_PASSWORD | sudo tee -a .env
-echo $WORDPRESS_DB_NAME | sudo tee -a .env
-
-echo "*********************"
 echo "Setting MySQL env variables"
 echo "*********************"
 
